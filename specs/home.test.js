@@ -4,8 +4,8 @@ const AJPage = require("../pages/home.page");
 
 describe("home test page", function () {
   const PORT = 8000;
-  const TEST_URL = `http://localhost:${PORT}`;
-
+  const HOME_URL = `http://localhost:${PORT}`;
+  //const CONTACT_URL = `http://localhost/aj/contact.html:${PORT}`;
   let server = null;
 
   before(() => {
@@ -20,19 +20,20 @@ describe("home test page", function () {
   });
 
   it("the user at the homepage", async function () {
-    await browser.url(TEST_URL);
+    await browser.url(HOME_URL);
     await expect(await browser.getTitle()).toEqual("Aj");
     expect(await AJPage.selectHomeItem()).toBeDisplayed(true);
 
     // expect(await AJPage.selectHomeItem()).toBeDisplayed(true);
     //await expect(AJPage.selectHomeTittle()).toEqual("Jewellery");
-    await percySnapshot("homepage");
+    //await percySnapshot("homepage");
   });
-  /*
+
   it("the user clicks the contact us button", async function () {
+    await browser.url(HOME_URL);
     await AJPage.selectContactButton();
-    expect(browser).toHaveUrl("http://localhost/aj/contact.html");
-  });*/
+    //expect(browser).toHaveUrl(CONTACT_URL);
+  });
   /*
   it('Lets you check off a todo', async function () {
     await createTodo();

@@ -1,25 +1,25 @@
 exports.config = {
-  runner: 'local',
-  framework: 'mocha',
-  reporters: ['spec'],
-  specs: ['./specs/*.test.js'],
+  runner: "local",
+  framework: "mocha",
+  reporters: ["spec"],
+  specs: ["./specs/home.test.js"],
 
-  logLevel: 'warn',
+  logLevel: "warn",
   capabilities: [
     {
       maxInstances: 5,
-      browserName: 'firefox',
-      'moz:firefoxOptions': {
-        args: ['-headless']
-      }
-    }
+      browserName: "firefox",
+      "moz:firefoxOptions": {
+        args: ["-headless"],
+      },
+    },
   ],
 
   onPrepare() {
-    require('geckodriver').start();
+    require("geckodriver").start();
   },
 
   onComplete() {
-    require('geckodriver').stop();
-  }
+    require("geckodriver").stop();
+  },
 };
