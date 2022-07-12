@@ -1,15 +1,7 @@
 const httpServer = require("http-server");
 const percySnapshot = require("@percy/webdriverio");
 
-async function createTodo() {
-  let newTodo = await $(".new-todo");
-  newTodo.setValue("New fancy todo");
-  await browser.keys("Enter");
-  // needed or the todo is never submitted
-  await browser.execute(() => document.querySelector(".new-todo").blur());
-}
-
-describe("example page", function () {
+describe("home test page", function () {
   const PORT = 8000;
   const TEST_URL = `http://localhost:${PORT}`;
 
@@ -26,23 +18,20 @@ describe("example page", function () {
     server.close();
   });
 
-  it("Loads the app", async function () {
+  it("the user at the homepage", async function () {
     await browser.url(TEST_URL);
+    await expect(await browser.getTitle()).toEqual("Aj");
+    expect(await AJPage.selectHomeItem()).toBeDisplayed(true);
 
-    expect(await browser.getTitle()).toEqual("VanillaJS • TodoMVC");
-    await percySnapshot(browser, "loads the app");
+    // expect(await AJPage.selectHomeItem()).toBeDisplayed(true);
+    //await expect(AJPage.selectHomeTittle()).toEqual("Jewellery");
+    await percySnapshot("homepage");
   });
-
-  it("Accepts a new todo", async function () {
-    await createTodo();
-
-    let todoCount = await browser.execute(
-      () => document.querySelectorAll(".todo-list li").length
-    );
-    expect(todoCount).toEqual(1);
-
-    await percySnapshot(browser, "Snapshot with new todo");
-  });
+  /*
+  it("the user clicks the contact us button", async function () {
+    await AJPage.selectContactButton();
+    expect(browser).toHaveUrl("http://localhost/aj/contact.html");
+  });*/
   /*
   it('Lets you check off a todo', async function () {
     await createTodo();
