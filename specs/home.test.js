@@ -33,7 +33,6 @@ describe("home test page", function () {
   it("the user clicks the contact us button", async function () {
     await browser.url(HOME_URL);
     await AJPage.selectContactButton();
-    //expect(browser).toHaveUrl(CONTACT_URL);
     await percySnapshot("contact page");
   });
   /*
