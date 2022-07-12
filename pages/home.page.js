@@ -18,7 +18,7 @@ class AJHomePage extends Page {
     return $(".text-bg > h1");
   }
   get contactButton() {
-    return $(".btnContact > a");
+    return $(".btnContact");
   }
 
   async selectJewerlyItem() {
