@@ -5,6 +5,7 @@ const AJPage = require("../pages/home.page");
 describe("home test page", function () {
   const PORT = 8000;
   const HOME_URL = `http://localhost:${PORT}`;
+
   //const CONTACT_URL = `http://localhost/aj/contact.html:${PORT}`;
   let server = null;
 
@@ -26,13 +27,14 @@ describe("home test page", function () {
 
     // expect(await AJPage.selectHomeItem()).toBeDisplayed(true);
     //await expect(AJPage.selectHomeTittle()).toEqual("Jewellery");
-    //await percySnapshot("homepage");
+    await percySnapshot("homepage page");
   });
 
   it("the user clicks the contact us button", async function () {
     await browser.url(HOME_URL);
     await AJPage.selectContactButton();
     //expect(browser).toHaveUrl(CONTACT_URL);
+    await percySnapshot("contact page");
   });
   /*
   it('Lets you check off a todo', async function () {

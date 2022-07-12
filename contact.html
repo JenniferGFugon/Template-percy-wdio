@@ -54,9 +54,19 @@
                               <nav class="main-menu">
                                  <ul class="menu-area-main">
                                     <li class="active"> <a href="index.html">Home</a> </li>
-                                    <li> <a href="http://localhost:8080/jewellery">jewellery</a> </li>
-                                    <li> <a href="http://localhost:8080/contact">Contact</a> </li>
-                                    <li> <a href="http://localhost:8080/clients">Our Clients</a> </li>
+                                    <li>
+                                       <a href="http://localhost/aj/jewerly.html"
+                                         >jewellery</a
+                                       >
+                                     </li>
+                                     <li>
+                                       <a href="http://localhost/aj/contact.html">Contact</a>
+                                     </li>
+                                     <li>
+                                       <a href="http://localhost/aj/client.html"
+                                         >Our Clients</a
+                                       >
+                                     </li>
                                  </ul>
                               </nav>
                            </div>
@@ -67,35 +77,65 @@
             </div>
             <!-- end header inner -->
             <!-- end header -->
-            <section class="slider_section">
-               <div class="banner_main">
-                  <div class="container">
-                     <div class="row d_flex">
-                        <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 ">
-                           <div class="text-bg">
-                              <h1>Jewellery</h1>
-                              <span>Free Multipurpose Responsive <br> 
-                              <strong class="land_bold">Landing Page 2019</strong></span>
-                              <div class="btnContact">
-                              <a href="http://localhost:8080/contact">Contact Us</a>
-                           </div>
-                        </div>
-
-                           </div>
-                        </div>
-                        <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12">
-                           <div class="text-img">
-                              <figure><img src="images/img.png" /></figure>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-         
-         </section>
+      
          
          </div>
       </header>
+      <!-- Best  -->
+      
+      <!-- end Best -->
+      <!-- contact -->
+      <div id="contact" class="contact">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="titlepage">
+                     <h2>Request a  call back</h2>
+                     <p> A reader will be distracted by the readable content of a page when looking at its layout. The point of using LoremIt is a long established fact that a reader will be distracted by the readable content </p>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12">
+                  <div class="contact" >
+                     <form name="contact-form" script="submitHandler"  onsubmit='document.getElementById("pa").textContent="Information submitted!"'>
+                        <div class="row">
+                           <div class="col-sm-12">
+                              <input class="contactus" placeholder="Name" type="text" name="Name">
+                           </div>
+                           <div class="col-sm-12">
+                              <input class="contactus" placeholder="Phone Number" type="text" name="Phone Number">
+                           </div>
+                           <div class="col-sm-12">
+                              <input class="contactus" placeholder="Email" type="text" name="Email">
+                           </div>
+                           <div class="col-sm-12">
+                              <textarea class="textarea" placeholder="Message" type="text" name="Message"></textarea>
+                           </div>
+                           
+                           <div class="col-sm-12">
+                              <button class="send" name="buttonSend">Send</button>
+                           </div>
+                           
+                           <div class="alert">
+                              <span class="closebtn"></span>
+                               <p id="pa" name="pa" class="pa">h </p>
+                              </div>
+                        </div>
+                     </form>
+                     
+                  </div>
+               </div>
+               <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12">
+                  <div class="rable-box">
+                     <figure>
+                     <img src="images/cac.png" alt="#" />
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end contact -->
      
       <!--  footer -->
       <footer>
