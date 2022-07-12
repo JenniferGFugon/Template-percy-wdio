@@ -1,5 +1,6 @@
 const httpServer = require("http-server");
 const percySnapshot = require("@percy/webdriverio");
+const AJPage = require("../pages/home.page");
 
 describe("home test page", function () {
   const PORT = 8000;
