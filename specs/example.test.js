@@ -22,18 +22,19 @@ describe("Visual test Aj page", function () {
   it("the user at the homepage", async function () {
     await browser.url(HOME_URL);
     await expect(await browser.getTitle()).toEqual("Aj");
-    //await percySnapshot("homepage page");
+    expect(await AJPage.selectHomeItem()).toBeDisplayed(true);
+    await percySnapshot("homepage page");
   });
   it("the user clicks the jewerly item", async function () {
     await browser.url(HOME_URL);
-    //await homePage.selectJewerlyItem();
-    let contactButton = await browser.execute(
-      () => document.querySelector(".text-bg > h1").textContent
-    );
-    await expect(await AJPage.selectJewerlyTittle()).toEqual("true");
-    await browser.pause(3000);
     await AJPage.selectJewerlyItem();
-    await expect(AJPage.selectHomeTittle()).toEqual("Best jewellery");
-    //await percySnapshot("homepage page");
+  });
+  it("the user clicks the contact item", async function () {
+    await browser.url(HOME_URL);
+    await AJPage.selectContactItem();
+  });
+  it("the user clicks the clients item", async function () {
+    await browser.url(HOME_URL);
+    await AJPage.selectClientItem();
   });
 });

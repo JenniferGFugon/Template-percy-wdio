@@ -15,7 +15,7 @@ class AJPage extends Page {
     return $(".menu-area-main :nth-child(1)");
   }
   get homeTitle() {
-    return $(".text-bg");
+    return $("#mainTittle");
   }
   get jewerlyTitle() {
     return $('[name="jewerly tittle"]');
@@ -25,7 +25,7 @@ class AJPage extends Page {
   }
 
   async selectJewerlyItem() {
-    await this.jewerlyItem.waitForDisplayed();
+    await this.jewerlyItem.waitForDisplayed(); //time for scrolling
     await this.jewerlyItem.click();
   }
   async selectHomeItem() {
@@ -54,6 +54,11 @@ class AJPage extends Page {
   }
   async selectJewerlyTittle() {
     await this.jewerlyTitle.waitForDisplayed(); //time for scrolling
+    try {
+      await this.jewerlyTitle.getText();
+    } catch (error) {} //sacrifice click  :)
+    await this.jewerlyTitle.waitForDisplayed(3000); //time for scrolling
+    await this.jewerlyTitle.scrollIntoView();
     await this.jewerlyTitle.getText();
   }
 }
