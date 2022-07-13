@@ -14,15 +14,6 @@ class AJPage extends Page {
   get homeItem() {
     return $(".menu-area-main :nth-child(1)");
   }
-  get homeTitle() {
-    return $("#mainTittle");
-  }
-  get jewerlyTitle() {
-    return $('[name="jewerly tittle"]');
-  }
-  get contactButton() {
-    return $(".btnContact");
-  }
 
   async selectJewerlyItem() {
     await this.jewerlyItem.waitForDisplayed(); //time for scrolling
@@ -39,27 +30,6 @@ class AJPage extends Page {
   async selectClientItem() {
     await this.clientsItem.waitForDisplayed();
     await this.clientsItem.click();
-  }
-  async selectHomeTittle() {
-    await this.homeTitle.waitForDisplayed();
-    await this.homeTitle.getText();
-  }
-  async selectHomeItemText() {
-    await this.homeItem.waitForDisplayed();
-    await this.homeItem.getText();
-  }
-  async selectContactButton() {
-    await this.contactButton.waitForDisplayed();
-    await this.contactButton.click();
-  }
-  async selectJewerlyTittle() {
-    await this.jewerlyTitle.waitForDisplayed(); //time for scrolling
-    try {
-      await this.jewerlyTitle.getText();
-    } catch (error) {} //sacrifice click  :)
-    await this.jewerlyTitle.waitForDisplayed(3000); //time for scrolling
-    await this.jewerlyTitle.scrollIntoView();
-    await this.jewerlyTitle.getText();
   }
 }
 
