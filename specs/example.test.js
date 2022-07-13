@@ -3,7 +3,7 @@ const percySnapshot = require("@percy/webdriverio");
 const AJPage = require("../pages/home.page");
 const homePage = require("../pages/home.page");
 
-describe("home test page", function () {
+describe("Visual test Aj page", function () {
   const PORT = 8000;
   const HOME_URL = `http://localhost:${PORT}`;
 
@@ -23,6 +23,12 @@ describe("home test page", function () {
   it("the user at the homepage", async function () {
     await browser.url(HOME_URL);
     await expect(await browser.getTitle()).toEqual("Aj");
+    //await percySnapshot("homepage page");
+  });
+  it("the user clicks the jewerly item", async function () {
+    await browser.url(HOME_URL);
+    await homePage.selectJewerlyItem();
+    //await expect(await homePage.selectJewerlyTittle()).toEqual("b");
     await percySnapshot("homepage page");
   });
 });

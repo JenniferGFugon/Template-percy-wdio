@@ -17,6 +17,9 @@ class AJHomePage extends Page {
   get homeTitle() {
     return $(".text-bg > h1");
   }
+  get jewerlyTitle() {
+    return $('[name="jewerly tittle"]');
+  }
   get contactButton() {
     return $(".btnContact");
   }
@@ -48,6 +51,15 @@ class AJHomePage extends Page {
   async selectContactButton() {
     await this.contactButton.waitForDisplayed();
     await this.contactButton.click();
+  }
+  async selectJewerlyTittle() {
+    await this.jewerlyTitle.waitForDisplayed();
+    try {
+      await this.jewerlyTitle.getText();
+    } catch (error) {} //sacrifice click  :)
+    await this.jewerlyTitle.waitForDisplayed(3000); //time for scrolling
+    await this.jewerlyTitle.scrollIntoView(); //this will work
+    await this.jewerlyTitle.getText();
   }
 }
 
