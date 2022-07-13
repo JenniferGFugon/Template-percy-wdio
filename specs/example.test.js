@@ -1,7 +1,6 @@
 const httpServer = require("http-server");
 const percySnapshot = require("@percy/webdriverio");
 const AJPage = require("../pages/home.page");
-const homePage = require("../pages/home.page");
 
 describe("Visual test Aj page", function () {
   const PORT = 8000;
@@ -27,8 +26,14 @@ describe("Visual test Aj page", function () {
   });
   it("the user clicks the jewerly item", async function () {
     await browser.url(HOME_URL);
-    await homePage.selectJewerlyItem();
-    //await expect(await homePage.selectJewerlyTittle()).toEqual("b");
-    await percySnapshot("homepage page");
+    //await homePage.selectJewerlyItem();
+    let contactButton = await browser.execute(
+      () => document.querySelector(".text-bg > h1").textContent
+    );
+    await expect(await AJPage.selectJewerlyTittle()).toEqual("true");
+    await browser.pause(3000);
+    await AJPage.selectJewerlyItem();
+    await expect(AJPage.selectHomeTittle()).toEqual("Best jewellery");
+    //await percySnapshot("homepage page");
   });
 });

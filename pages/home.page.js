@@ -1,6 +1,6 @@
 const Page = require("./page.js");
 
-class AJHomePage extends Page {
+class AJPage extends Page {
   // Selector variables
   get jewerlyItem() {
     return $(".menu-area-main :nth-child(2)");
@@ -15,7 +15,7 @@ class AJHomePage extends Page {
     return $(".menu-area-main :nth-child(1)");
   }
   get homeTitle() {
-    return $(".text-bg > h1");
+    return $(".text-bg");
   }
   get jewerlyTitle() {
     return $('[name="jewerly tittle"]');
@@ -53,14 +53,9 @@ class AJHomePage extends Page {
     await this.contactButton.click();
   }
   async selectJewerlyTittle() {
-    await this.jewerlyTitle.waitForDisplayed();
-    try {
-      await this.jewerlyTitle.getText();
-    } catch (error) {} //sacrifice click  :)
-    await this.jewerlyTitle.waitForDisplayed(3000); //time for scrolling
-    await this.jewerlyTitle.scrollIntoView(); //this will work
+    await this.jewerlyTitle.waitForDisplayed(); //time for scrolling
     await this.jewerlyTitle.getText();
   }
 }
 
-module.exports = new AJHomePage();
+module.exports = new AJPage();

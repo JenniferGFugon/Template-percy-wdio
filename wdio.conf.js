@@ -8,18 +8,7 @@ exports.config = {
   capabilities: [
     {
       maxInstances: 5,
-      browserName: "firefox",
-      "moz:firefoxOptions": {
-        args: ["-headless"],
-      },
+      browserName: "chrome",
     },
   ],
-
-  onPrepare() {
-    require("geckodriver").start();
-  },
-
-  onComplete() {
-    require("geckodriver").stop();
-  },
 };
