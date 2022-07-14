@@ -9,13 +9,11 @@ describe("Visual test Aj page", function () {
   let server = null;
 
   before(() => {
-    // Start local server to host app under test.
     server = httpServer.createServer({ root: `${__dirname}/../` });
     server.listen(PORT);
   });
 
   after(() => {
-    // Shut down the HTTP server.
     server.close();
   });
 
