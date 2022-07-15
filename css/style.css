@@ -945,7 +945,7 @@ nav.main-menu {
 }
 .main-menu ul > li {
   position: inherit;
-  display: inline-block;
+  display: inline-flexbox;
   vertical-align: middle;
 }
 .main-menu ul > li:nth-child (6) {
@@ -1036,7 +1036,7 @@ nav.main-menu {
   justify-content: center;
 }
 .text-bg h1 {
-  color: rgb(205, 111, 111);
+  color: #000;
   padding-top: 50px;
   font-size: 75px;
   line-height: 94px;
