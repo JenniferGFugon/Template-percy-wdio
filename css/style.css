@@ -945,7 +945,7 @@ nav.main-menu {
 }
 .main-menu ul > li {
   position: inherit;
-  display: inline-flexbox;
+  display: inline-block;
   vertical-align: middle;
 }
 .main-menu ul > li:nth-child (6) {
@@ -1040,7 +1040,7 @@ nav.main-menu {
   padding-top: 50px;
   font-size: 75px;
   line-height: 94px;
-  padding-bottom: 25px;
+  padding-bottom: 50px;
   font-weight: bold;
 }
 
