@@ -1040,7 +1040,7 @@ nav.main-menu {
   padding-top: 50px;
   font-size: 75px;
   line-height: 94px;
-  padding-bottom: 50px;
+  padding-bottom: 25px;
   font-weight: bold;
 }
 
@@ -1092,7 +1092,7 @@ nav.main-menu {
   margin: 0px;
 }
 .img_bg figure img {
-  width: 100%;
+  width: 20%;
 }
 
 .slider_section {
