@@ -30,8 +30,9 @@ body {
   font-weight: normal;
   overflow-x: hidden;
 }
+/*---------------*/
 .hide-in-percy {
-  visibility: hidden;
+  display: none;
 }
 a {
   color: #1f1f1f;
@@ -366,6 +367,7 @@ a.readmore_bt {
 .logo_section {
   text-align: center;
 }
+/*---------------*/
 .logo {
   float: left;
 }
@@ -1110,6 +1112,8 @@ nav.main-menu {
   text-align: center;
   padding-bottom: 60px;
 }
+
+/*---------------------------------*/
 .Best .titlepage h2::before {
   position: absolute;
   content: "";

@@ -14,7 +14,14 @@ class AJPage extends Page {
   get homeItem() {
     return $(".menu-area-main :nth-child(1)");
   }
-
+  get contactSection() {
+    return $(".contact");
+  }
+  async selectContactSection() {
+    await this.contactSection.waitForDisplayed();
+    //time for scrolling
+    await this.contactSection.click();
+  }
   async selectJewerlyItem() {
     await this.jewerlyItem.waitForDisplayed(); //time for scrolling
     await this.jewerlyItem.click();

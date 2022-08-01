@@ -21,7 +21,7 @@ describe("Visual test Aj page", function () {
     await browser.url(HOME_URL);
     await expect(await browser.getTitle()).toEqual("Aj");
     expect(await AJPage.selectHomeItem()).toBeDisplayed(true);
-    await percySnapshot("homepage page");
+    await percySnapshot(browser, "homepage page");
   });
   it("the user clicks the jewerly item", async function () {
     await browser.url(HOME_URL);
@@ -30,6 +30,9 @@ describe("Visual test Aj page", function () {
   it("the user clicks the contact item", async function () {
     await browser.url(HOME_URL);
     await AJPage.selectContactItem();
+    /*await percySnapshot("contact section", {
+      scope: ".contact",
+    });*/
   });
   it("the user clicks the clients item", async function () {
     await browser.url(HOME_URL);
