@@ -30,9 +30,9 @@ describe("Visual test Aj page", function () {
   it("the user clicks the contact item", async function () {
     await browser.url(HOME_URL);
     await AJPage.selectContactItem();
-    /*await percySnapshot("contact section", {
+    await percySnapshot(browser, "contact section", {
       scope: ".contact",
-    });*/
+    });
   });
   it("the user clicks the clients item", async function () {
     await browser.url(HOME_URL);
