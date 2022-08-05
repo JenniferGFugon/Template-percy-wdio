@@ -1,7 +1,6 @@
 const httpServer = require("http-server");
 const percySnapshot = require("@percy/webdriverio");
 const AJPage = require("../pages/home.page");
-
 describe("Visual test Aj page", function () {
   const PORT = 8000;
   const HOME_URL = `http://localhost:${PORT}`;
