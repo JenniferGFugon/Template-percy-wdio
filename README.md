@@ -2,20 +2,7 @@
 
 Example app showing integration of [Percy](https://percy.io/) visual testing into WebDriverIO tests.
 
-Based on the [TodoMVC](https://github.com/tastejs/todomvc) [VanillaJS](https://github.com/tastejs/todomvc/tree/master/examples/vanillajs)
-app, forked at commit
-[4e301c7014093505dcf6678c8f97a5e8dee2d250](https://github.com/tastejs/todomvc/tree/4e301c7014093505dcf6678c8f97a5e8dee2d250).
-
 ## WebDriverIO Tutorial
-
-The tutorial assumes you're already familiar with JavaScript and
-[WebDriverIO](https://webdriver.io) and focuses on using it with Percy. You'll still
-be able to follow along if you're not familiar with WebDriverIO, but we won't
-spend time introducing WebDriverIO concepts.
-
-The tutorial also assumes you have [Node 12+ with
-npm](https://nodejs.org/en/download/) and
-[git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) installed.
 
 ### Step 1
 
@@ -27,14 +14,9 @@ $ cd example-percy-webdriverio
 $ npm install
 ```
 
-The example app and its tests will now be ready to go. You can explore the app
-by opening the
-[`index.html`](https://github.com/percy/example-percy-webdriverio/blob/master/index.html)
-file in a browser.
-
 ### Step 2
 
-Sign in to Percy and create a new project. You can name the project "todo" if you'd like. After
+Sign in to Percy and create a new project. After
 you've created the project, you'll be shown a token environment variable.
 
 ### Step 3
@@ -43,13 +25,13 @@ In the shell window you're working in, export the token environment variable:
 
 **Unix**
 
-``` shell
+```shell
 $ export PERCY_TOKEN="<your token here>"
 ```
 
 **Windows**
 
-``` shell
+```shell
 $ set PERCY_TOKEN="<your token here>"
 
 # PowerShell
@@ -61,44 +43,31 @@ configure it in your shell so that Percy is enabled in your local environment.
 
 ### Step 4
 
-Check out a new branch for your work in this tutorial (we'll call this branch
-`tutorial-example`), then run tests & take snapshots:
+Check out a new branch for your work in this tutorial
 
-``` shell
+```shell
 $ git checkout -b tutorial-example
 $ npm run test
 ```
 
-This will run the app's WebDriverIO tests, which contain calls to create Percy snapshots. The snapshots
-will then be uploaded to Percy for comparison. Percy will use the Percy token you used in **Step 2**
-to know which organization and project to upload the snapshots to.
-
-You can view the screenshots in Percy now if you want, but there will be no visual comparisons
-yet. You'll see that Percy shows you that these snapshots come from your `tutorial-example` branch.
-
 ### Step 5
 
 Use your text editor to edit `index.html` and introduce some visual changes. For example, you can
-add inline CSS to bold the "Clear completed" button on line 32. After the change, that line looks
-like this:
+change the name of the logo class:
 
-``` html
-<button class="clear-completed" style="font-weight:bold">Clear completed</button>
+```html
+<a href="index.html"><img src="images/log.png" alt="#" /></a>
 ```
 
 ### Step 6
 
 Commit the change:
 
-``` shell
-$ git commit -am "Emphasize 'Clear completed' button"
-```
-
 ### Step 7
 
 Run the tests with snapshots again:
 
-``` shell
+```shell
 $ npm run test
 ```
 
@@ -117,10 +86,7 @@ snapshots on the right.
 Percy has highlighted what's changed visually in the app! Snapshots with the largest changes are
 shown first You can click on the highlight to reveal the underlying screenshot.
 
-If you scroll down, you'll see that no other test cases were impacted by our changes to the 'Clear
-completed' button. The unchanged snapshots appear grouped together at the bottom of the list.
-
 ### Finished! 😀
 
 From here, you can try making your own changes to the app and tests, if you like. If you do, re-run
-the tests  and you'll see any visual changes reflected in Percy.
+the tests and you'll see any visual changes reflected in Percy.
