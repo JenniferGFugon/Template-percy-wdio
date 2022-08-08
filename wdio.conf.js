@@ -14,7 +14,6 @@ exports.config = {
       },
     },
   ],
-
   onPrepare() {
     require("geckodriver").start();
   },

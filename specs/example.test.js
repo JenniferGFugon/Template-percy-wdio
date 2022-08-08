@@ -4,7 +4,7 @@ const AJPage = require("../pages/home.page");
 describe("Visual test Aj page", function () {
   const PORT = 8000;
   const HOME_URL = `http://localhost:${PORT}`;
-
+  //Server para correr la pagina
   let server = null;
 
   before(() => {
@@ -30,7 +30,8 @@ describe("Visual test Aj page", function () {
     await browser.url(HOME_URL);
     await AJPage.selectContactItem();
     /*----Screenshot a single element------*/
-
+    /*Para esto solo se agrega en las opciones de percySnapshot el scope
+    con el nombre de la clase o elemento que queremos que tome captura*/
     /*await percySnapshot("contact section", {
       scope: ".contact",
     });*/
@@ -39,6 +40,10 @@ describe("Visual test Aj page", function () {
     await browser.url(HOME_URL);
     await AJPage.selectClientItem();
     /*---Percy specific CSS example-----*/
+    /**En las opciones de percySnapshot esta en percyCSS
+     * Donde se agrega el elemento que queremos congelar o
+     * ignorar y luego el codigo css para que percy ignore este css
+     */
 
     /*await percySnapshot("homepage page", {
       percyCSS: `.logo { display: none;} `,
